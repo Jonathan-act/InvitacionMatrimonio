@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#E9DFCC;
+    --cream-2:#F7F2E8;
+    --cream-3:#FBF8F1;
+    --cream-deep:#E3D7C0;
+    --ink:#322E27;
+    --muted:#8A8071;
+    --accent:#51593F;
+    --gold:#B6985A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);font-family:'Montserrat',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+  @keyframes slowZoom{0%{transform:scale(1);}100%{transform:scale(1.08);}}
+</style>
+</helmet>
+<div style="max-width:480px;margin:0 auto;background:var(--cream-2);box-shadow:0 0 60px rgba(50,46,39,.12);overflow:hidden;">
+
+  <!-- PORTADA + CUENTA -->
+  <div style="min-height:100svh;display:flex;flex-direction:column;">
+  <section id="portada" style="position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 28px 20px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%, var(--cream-3), var(--cream-2));">
+    <sc-if value="{{ heroFloral }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;pointer-events:none;opacity:.55;background:radial-gradient(40% 28% at 18% 14%, rgba(182,152,90,.16), transparent 70%),radial-gradient(38% 26% at 84% 22%, rgba(81,89,63,.12), transparent 70%),radial-gradient(46% 30% at 78% 86%, rgba(182,152,90,.12), transparent 70%),radial-gradient(40% 26% at 14% 88%, rgba(81,89,63,.10), transparent 70%);"></div>
+    </sc-if>
+    <sc-if value="{{ heroGeo }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:repeating-linear-gradient(45deg, rgba(81,89,63,.07) 0 1px, transparent 1px 22px),repeating-linear-gradient(-45deg, rgba(182,152,90,.07) 0 1px, transparent 1px 22px);"></div>
+    </sc-if>
+
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:30px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--accent);letter-spacing:.04em;">J<span style="color:var(--gold);font-style:italic;font-size:18px;">&amp;</span>V</span>
+      </div>
+      <p style="margin:0 0 26px;letter-spacing:.42em;text-transform:uppercase;font-size:12px;font-weight:500;color:var(--gold);">¡Nos casamos!</p>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--accent);line-height:1.05;font-size:58px;">Jonathan</h1>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:40px;color:var(--gold);margin:2px 0;">&amp;</span>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--accent);line-height:1.05;font-size:58px;">Vanessa</h1>
+
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:34px 0 0;">
+        <span style="height:1px;width:46px;background:linear-gradient(90deg,transparent,var(--gold));"></span>
+        <span style="width:7px;height:7px;background:var(--gold);transform:rotate(45deg);display:block;"></span>
+        <span style="height:1px;width:46px;background:linear-gradient(90deg,var(--gold),transparent);"></span>
+      </div>
+      <p style="margin:24px 0 0;font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.06em;color:var(--ink);">13 de noviembre de 2027</p>
+      <p style="margin:6px 0 0;letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:var(--muted);">Coronel · Chile</p>
+    </div>
+
+  </section>
+  </div>
+
+  <!-- DETALLES -->
+  <section id="detalles" data-reveal="1" style="padding:78px 30px;text-align:center;background:var(--cream-2);">
+    <p style="margin:0 0 14px;letter-spacing:.35em;text-transform:uppercase;font-size:12px;font-weight:500;color:var(--gold);">El evento</p>
+    <h2 style="margin:0 0 24px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;color:var(--accent);">Detalles</h2>
+    <div style="background:var(--cream-3);border:1px solid var(--cream-deep);border-radius:3px;padding:34px 26px;">
+      <p style="margin:0 0 4px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--gold);">Ceremonia y celebración en el mismo lugar</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:20px 0;">
+        <span style="height:1px;width:30px;background:var(--cream-deep);"></span>
+        <span style="width:6px;height:6px;background:var(--gold);transform:rotate(45deg);display:block;"></span>
+        <span style="height:1px;width:30px;background:var(--cream-deep);"></span>
+      </div>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--accent);">Sábado 13 de noviembre</p>
+      <p style="margin:4px 0 18px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent);">16:00 hrs</p>
+      <p style="margin:0;font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--ink);">Centro de Eventos Festa</p>
+      <p style="margin:4px 0 26px;font-size:13px;color:var(--muted);">Coronel, Región del Biobío</p>
+      <a href="https://maps.app.goo.gl/r8jCVdffvwSRLpN2A" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;border:1px solid var(--accent);color:var(--accent);padding:13px 26px;border-radius:2px;letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:600;transition:background .25s,color .25s;" style-hover="background:var(--accent);color:var(--cream-2);">
+        <span style="width:9px;height:9px;border-radius:50%;border:1.5px solid currentColor;display:block;"></span>
+        Cómo llegar
+      </a>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:30px 0 18px;">
+      <span style="height:1px;width:36px;background:linear-gradient(90deg,transparent,var(--gold));"></span>
+      <span style="width:6px;height:6px;background:var(--gold);transform:rotate(45deg);display:block;"></span>
+      <span style="height:1px;width:36px;background:linear-gradient(90deg,var(--gold),transparent);"></span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div style="background:var(--cream-3);border:1px solid var(--cream-deep);border-radius:3px;padding:22px 8px;text-align:center;">
+        <div style="width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><span style="width:9px;height:9px;background:var(--gold);transform:rotate(45deg);display:block;"></span></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);line-height:1.15;">Formal</div>
+        <p style="margin:6px 0 0;font-size:11px;line-height:1.5;color:var(--muted);">Código de vestimenta</p>
+      </div>
+      <div style="background:var(--cream-3);border:1px solid var(--cream-deep);border-radius:3px;padding:22px 8px;text-align:center;">
+        <div style="width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><span style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--gold);line-height:1;">P</span></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);line-height:1.15;">Estacionamiento</div>
+        <p style="margin:6px 0 0;font-size:11px;line-height:1.5;color:var(--muted);">Disponible para invitados</p>
+      </div>
+      <div style="background:var(--cream-3);border:1px solid var(--cream-deep);border-radius:3px;padding:22px 8px;text-align:center;">
+        <div style="width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--gold);line-height:1;">+18</span></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);line-height:1.15;">Solo adultos</div>
+        <p style="margin:6px 0 0;font-size:11px;line-height:1.5;color:var(--muted);">Agradecemos su comprensión</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" data-reveal="1" style="padding:80px 30px;text-align:center;background:var(--accent);">
+    <p style="margin:0 0 14px;letter-spacing:.35em;text-transform:uppercase;font-size:12px;font-weight:500;color:var(--gold);">Te esperamos</p>
+    <h2 style="margin:0 0 16px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;color:var(--cream-2);">Confirma tu asistencia</h2>
+    <p style="margin:0 auto 30px;max-width:320px;font-size:14px;line-height:1.7;color:rgba(247,242,232,.78);">Tu presencia es muy importante para nosotros. Por favor confírmanos antes de los primeros días de septiembre de 2027.</p>
+    <a href="https://wa.me/56964823517?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20al%20matrimonio%20de%20Jonathan%20y%20Vanessa." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;text-decoration:none;background:var(--cream-2);color:var(--accent);padding:17px 34px;border-radius:2px;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.22);transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.28);">
+      <span style="width:9px;height:9px;border-radius:50%;background:var(--gold);display:block;"></span>
+      Confirmar por WhatsApp
+    </a>
+    <p style="margin:22px 0 0;font-size:12px;color:rgba(247,242,232,.7);">+56 9 6482 3517</p>
+  </section>
+
+  <!-- 10. REGALOS -->
+  <section id="regalos" data-reveal="1" style="padding:78px 28px;text-align:center;background:var(--cream-2);">
+    <p style="margin:0 0 14px;letter-spacing:.35em;text-transform:uppercase;font-size:12px;font-weight:500;color:var(--gold);">Con cariño</p>
+    <h2 style="margin:0 0 16px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;color:var(--accent);">Regalos</h2>
+    <p style="margin:0 auto 28px;max-width:330px;font-size:14px;line-height:1.7;color:var(--muted);">El mejor regalo es compartir este día con nosotros. Si además deseas obsequiarnos algo, agradecemos una transferencia.</p>
+    <div style="background:var(--cream-3);border:1px solid var(--cream-deep);border-radius:3px;padding:28px 24px;text-align:left;max-width:360px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--cream-deep);"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Titular</span><span style="font-size:13px;font-weight:500;color:var(--ink);text-align:right;">Jonathan Reyes Soto</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--cream-deep);"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">RUT</span><span style="font-size:13px;font-weight:500;color:var(--ink);text-align:right;">17.842.563-9</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--cream-deep);"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Banco</span><span style="font-size:13px;font-weight:500;color:var(--ink);text-align:right;">Banco de Chile</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--cream-deep);"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Tipo</span><span style="font-size:13px;font-weight:500;color:var(--ink);text-align:right;">Cuenta Corriente</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--cream-deep);"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">N° cuenta</span><span style="font-size:13px;font-weight:500;color:var(--ink);text-align:right;">001-23456789-02</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Correo</span><span style="font-size:12px;font-weight:500;color:var(--ink);text-align:right;word-break:break-all;">jonathan.vanessa.boda@gmail.com</span></div>
+    </div>
+    <button onClick="{{ copyData }}" style="margin-top:22px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:13px 28px;border-radius:2px;letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:600;font-family:'Montserrat',sans-serif;transition:background .25s,color .25s;" style-hover="background:var(--gold);color:var(--cream-2);">{{ copyLabel }}</button>
+  </section>
+
+  <!-- 6. CRONOGRAMA -->
+  <section id="cronograma" data-reveal="1" style="padding:78px 34px;text-align:center;background:var(--cream-3);">
+    <p style="margin:0 0 14px;letter-spacing:.35em;text-transform:uppercase;font-size:12px;font-weight:500;color:var(--gold);">El día</p>
+    <h2 style="margin:0 0 36px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;color:var(--accent);">Cronograma</h2>
+    <div style="position:relative;text-align:left;max-width:320px;margin:0 auto;padding-left:40px;">
+      <div style="position:absolute;left:8px;top:10px;bottom:10px;width:1px;background:var(--cream-deep);"></div>
+      <div style="position:relative;padding-bottom:30px;">
+        <span style="position:absolute;left:-39px;top:2px;width:17px;height:17px;border-radius:50%;background:var(--cream-3);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold);"></span></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--accent);line-height:1;">16:00</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--muted);letter-spacing:.06em;">Ceremonia</div>
+      </div>
+      <div style="position:relative;padding-bottom:30px;">
+        <span style="position:absolute;left:-39px;top:2px;width:17px;height:17px;border-radius:50%;background:var(--cream-3);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold);"></span></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--accent);line-height:1;">17:00</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--muted);letter-spacing:.06em;">Cóctel de bienvenida</div>
+      </div>
+      <div style="position:relative;padding-bottom:30px;">
+        <span style="position:absolute;left:-39px;top:2px;width:17px;height:17px;border-radius:50%;background:var(--cream-3);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold);"></span></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--accent);line-height:1;">18:30</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--muted);letter-spacing:.06em;">Cena</div>
+      </div>
+      <div style="position:relative;padding-bottom:30px;">
+        <span style="position:absolute;left:-39px;top:2px;width:17px;height:17px;border-radius:50%;background:var(--cream-3);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold);"></span></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--accent);line-height:1;">20:30</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--muted);letter-spacing:.06em;">Brindis</div>
+      </div>
+      <div style="position:relative;">
+        <span style="position:absolute;left:-39px;top:2px;width:17px;height:17px;border-radius:50%;background:var(--gold);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;"><span style="width:5px;height:5px;border-radius:50%;background:var(--cream-3);"></span></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--accent);line-height:1;">21:00</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--muted);letter-spacing:.06em;">Fiesta</div>
+      </div>
+    </div>
+    <p style="margin:34px 0 0;font-size:12px;font-style:italic;color:var(--muted);">* Los horarios son referenciales y pueden ajustarse.</p>
+  </section>
+
+  <!-- 11. CIERRE -->
+  <section id="cierre" data-reveal="1" style="padding:90px 34px;text-align:center;background:var(--accent);">
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 28px;">
+      <span style="height:1px;width:46px;background:linear-gradient(90deg,transparent,var(--gold));"></span>
+      <span style="width:7px;height:7px;background:var(--gold);transform:rotate(45deg);display:block;"></span>
+      <span style="height:1px;width:46px;background:linear-gradient(90deg,var(--gold),transparent);"></span>
+    </div>
+    <p style="margin:0 auto 30px;max-width:300px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;line-height:1.5;color:var(--cream-2);">Gracias por acompañarnos en este día tan especial.</p>
+    <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:40px;color:var(--cream-2);line-height:1.1;">Jonathan <span style="color:var(--gold);font-style:italic;">&amp;</span> Vanessa</h2>
+    <p style="margin:14px 0 0;letter-spacing:.24em;text-transform:uppercase;font-size:11px;color:var(--gold);">13 · 11 · 2027</p>
+  </section>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#51593F&quot;,&quot;options&quot;:[&quot;#51593F&quot;,&quot;#3D4A4C&quot;,&quot;#6B3B3B&quot;,&quot;#4A4660&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colores&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B6985A&quot;,&quot;options&quot;:[&quot;#B6985A&quot;,&quot;#C2A86B&quot;,&quot;#A8884C&quot;,&quot;#9A8B70&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colores&quot;},&quot;heroPattern&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;floral&quot;,&quot;options&quot;:[&quot;floral&quot;,&quot;geometric&quot;,&quot;plain&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Portada&quot;}}">
+class Component extends DCLogic {
+  state = { days: '0', hours: '00', minutes: '00', seconds: '00', lightbox: null, copied: false };
+
+  componentDidMount() {
+    this.applyTheme();
+    this.tick();
+    this._t = setInterval(() => this.tick(), 1000);
+    setTimeout(() => this.setupReveal(), 60);
+  }
+
+  componentDidUpdate() { this.applyTheme(); }
+
+  componentWillUnmount() {
+    clearInterval(this._t);
+    if (this._io) this._io.disconnect();
+  }
+
+  applyTheme() {
+    const r = document.documentElement;
+    if (this.props.accentColor) r.style.setProperty('--accent', this.props.accentColor);
+    if (this.props.goldColor) r.style.setProperty('--gold', this.props.goldColor);
+  }
+
+  pad(n) { return String(n).padStart(2, '0'); }
+
+  tick() {
+    const target = new Date('2027-11-13T16:00:00').getTime();
+    let diff = target - Date.now();
+    if (diff < 0) diff = 0;
+    this.setState({
+      days: String(Math.floor(diff / 86400000)),
+      hours: this.pad(Math.floor((diff % 86400000) / 3600000)),
+      minutes: this.pad(Math.floor((diff % 3600000) / 60000)),
+      seconds: this.pad(Math.floor((diff % 60000) / 1000)),
+    });
+  }
+
+  setupReveal() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1)';
+    });
+    if (!('IntersectionObserver' in window)) {
+      els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  renderVals() {
+    const hp = this.props.heroPattern ?? 'floral';
+    return {
+      days: this.state.days,
+      hours: this.state.hours,
+      minutes: this.state.minutes,
+      seconds: this.state.seconds,
+      heroFloral: hp === 'floral',
+      heroGeo: hp === 'geometric',
+      lightboxOpen: this.state.lightbox !== null,
+      lightboxNum: this.state.lightbox !== null ? String(this.state.lightbox + 1) : '',
+      copyLabel: this.state.copied ? '✓ Datos copiados' : 'Copiar datos',
+      openPhoto: (e) => this.setState({ lightbox: Number(e.currentTarget.dataset.index) }),
+      closePhoto: () => this.setState({ lightbox: null }),
+      copyData: () => {
+        const txt = [
+          'Titular: Jonathan Reyes Soto',
+          'RUT: 17.842.563-9',
+          'Banco: Banco de Chile',
+          'Tipo de cuenta: Cuenta Corriente',
+          'N° de cuenta: 001-23456789-02',
+          'Correo: jonathan.vanessa.boda@gmail.com',
+        ].join('\n');
+        if (navigator.clipboard) navigator.clipboard.writeText(txt).catch(() => {});
+        this.setState({ copied: true });
+        setTimeout(() => this.setState({ copied: false }), 2200);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
